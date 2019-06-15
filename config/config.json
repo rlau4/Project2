@@ -1,13 +1,8 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "password",
-    "database": "exampledb",
-=======
-    "password": null,
     "database": "dog_dateDB",
->>>>>>> 0453887674ad85a7b08a71852700f07b4ff2b42d
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
