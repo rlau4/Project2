@@ -1,11 +1,16 @@
+/* Starter Owner Data */
+
 INSERT INTO owners(name, email)  
 	VALUES  ('Brandon Stevenson', 'test1@class.com'), 
 			('Ben Clark', 'test2@email.com'), 
             ('Matt Brooks', 'test3@email.com'),
 			('Peter Lau', 'test4@email.com');
-SELECT * FROM dogs;
 
-INSERT INTO dogs(name, breed, size, picture, personality, age)
+
+
+/*Starter Dog Date */
+
+INSERT INTO dogs(dogName, breed, size, pic, personality, age)
 	VALUES ('Sadie', 'Labrador Retreiver', 3, 'blank.png', 1, 3),
     ('Roscoe', 'Pitbull', 3, 'blank.png', 1, 2),
     ('Merc', 'Chi-weenie', 1, 'blank.png', 1, 2),
