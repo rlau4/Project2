@@ -5,14 +5,13 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">DOGGIE DATE</a>
+      <a class="navbar-brand" href="index">DOGGIE DATE</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/views/signup">SIGN UP</a></li>
-        <li><a href="/views/login">LOG IN</a></li>
+        <li><a href="login">LOG IN</a></li>
       </ul>
     </div>
   </div>
@@ -22,6 +21,7 @@
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Welcome to Doggie Date!</h3>
   <h3>A place for dog people.</h3>
+  <div class="container">
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     <script>
       function onSignIn(googleUser) {
@@ -39,7 +39,7 @@
         console.log("ID Token: " + id_token);
       }
     </script>
-      <a href="#" onclick="signOut();">Sign out</a>
+    <a href="index" onclick="signOut();">Sign out</a>
     <script>
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
@@ -47,5 +47,17 @@
           console.log('User signed out.');
         });
       }
-</script>
+    </script>
+  </div>
 </div>
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Log in securely with Google!</h3>
+  <p>Email and name will be used in creating a secure profile. </p>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
+<footer class="container-fluid bg-4 text-center">
+
+</footer>

@@ -8,12 +8,12 @@ module.exports = function(app) {
 
   //Load signup page
   app.get("/signup", function(req, res) {
-    res.render("/signup");
+    res.render("signup");
   });
 
   // Load login page
   app.get("/login", function(req, res) {
-    res.render("/login");
+    res.render("login");
   });
 
   // Load example page and pass in an example by id
