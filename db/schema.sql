@@ -1,5 +1,3 @@
-/*table creation for owners */
-
 DROP DATABASE IF EXISTS dog_dateDB;
 CREATE DATABASE dog_dateDB;
 
@@ -12,8 +10,6 @@ email VARCHAR(50) NOT NULL,
 PRIMARY KEY (id)
 );
 
-/* table creation for dogs */
-
 CREATE TABLE dogs (
 id INT NOT NULL AUTO_INCREMENT,
 dogName VARCHAR(26) NOT NULL,
@@ -23,7 +19,11 @@ pic TEXT NOT NULL,
 personality INT(1) NOT NULL,
 age INT(1) NOT NULL,
 createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-updatedAt 	TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+updatedAt     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 OwnerId INT,
 PRIMARY KEY (id)
+<<<<<<< HEAD:db/schema.sql
 );
+=======
+)
+>>>>>>> 7ac4a10a4accf03b1f89c1cf365872be2f933d94:db/schema.sql
