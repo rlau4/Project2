@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "password",
-=======
-    "password": "",
->>>>>>> 82b134ba322f92375b831473b74ac817a85672d0
     "database": "dog_dateDB",
     "host": "localhost",
     "port": 3306,
