@@ -3,7 +3,16 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+<<<<<<< HEAD
+    db.Dog.findAll({}).then(function(dbDog) {
+      res.render("index", {
+        msg: "Welcome!",
+        examples: dbDog
+      });
+    });
+=======
     res.render("index");
+>>>>>>> 7ac4a10a4accf03b1f89c1cf365872be2f933d94
   });
 
   //Load signup page
