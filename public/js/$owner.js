@@ -14,13 +14,13 @@ $(document).ready(function() {
         data: JSON.stringify(inputOwner)
       });
     },
-    getExamples: function() {
+    getOwners: function() {
       return $.ajax({
         url: "api/owners",
         type: "GET"
       });
     },
-    deleteExample: function(id) {
+    deleteOwner: function(id) {
       return $.ajax({
         url: "api/owners/" + id,
         type: "DELETE"
