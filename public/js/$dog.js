@@ -18,13 +18,13 @@ $(document).ready(function() {
         data: JSON.stringify(inputDog)
       });
     },
-    getExamples: function() {
+    getDogs: function() {
       return $.ajax({
         url: "api/dogs",
         type: "GET"
       });
     },
-    deleteExample: function(id) {
+    deleteDogs: function(id) {
       return $.ajax({
         url: "api/dogs/" + id,
         type: "DELETE"
