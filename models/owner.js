@@ -7,12 +7,16 @@ module.exports = function(sequelize, DataTypes) {
         notEmpty: true
       }
     },
-    email: {
-      type: DataTypes.STRING,
+    googleID: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         notEmpty: true
       }
+    },
+    pic: {
+      type: DataTypes.TEXT,
+      allowNull: true
     }
   });
 
