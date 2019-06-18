@@ -1,10 +1,28 @@
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">DOGGIE DATE</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login">LOG IN</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <h3>Welcome to Doggie Date!</h3>
   <h3>A place for dog people.</h3>
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
-  <a href="/" onclick="signOut();">Sign out</a>
 
 </div>
 <!-- Second Container -->
@@ -34,13 +52,5 @@
     var loggedIn;
     loggedIn = true;
     window.location.assign("/dashboard");
-  }
-
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-    loggedIn = false;
   }
 </script>
