@@ -1,11 +1,11 @@
 $(document).ready(function() {
   var $addDog = $("#addDog");
-  var $inputDogName = $("#inputDogName");
-  var $inputDogBreed = $("#inputDogBreed");
-  var $inputDogSize = $("#inputDogSize");
-  var $inputDogPic = $("#inputDogPic");
-  var $inputDogPersonality = $("#inputDogPersonality");
-  var $inputDogAge = $("#inputDogAge");
+  var $inputDogName = $("#input-dog-name");
+  var $inputDogBreed = $("#input-dog-breed");
+  var $inputDogSize = $("#input-dog-size");
+  var $inputDogPic = $("#input-dog-pic");
+  var $inputDogPersonality = $("#input-dog-personality");
+  var $inputDogAge = $("#input-dog-age");
 
   var API = {
     saveDog: function(inputDog) {
