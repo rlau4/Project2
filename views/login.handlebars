@@ -45,6 +45,44 @@
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
+    var userName = profile.getName();
+    var userEmail = profile.getEmail();
+    var userPic = profile.getImageUrl();
+
+    var API = {
+      saveOwner: function(inputOwner) {
+        return $.ajax({
+          headers: {
+            "Content-Type": "application/json"
+          },
+          type: "POST",
+          url: "api/owners",
+          data: JSON.stringify(inputOwner)
+        });
+      }
+    };
+
+    var handleAddOwner = function(event) {
+
+      var inputOwner = {
+        name: userName,
+        email: userEmail,
+        pic: userPic
+      };
+
+      //front end validation for user submitting all necessary owner info
+      if (!(inputOwner.name && inputOwner.email)) {
+        alert("You must enter an example text and description!");
+        return;
+      }
+
+      API.saveOwner(inputOwner).then(function() {
+      });
+
+    };
+
+    handleAddOwner();
+
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
