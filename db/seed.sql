@@ -1,10 +1,10 @@
 /* Starter Owner Data */
 
-INSERT INTO owners(name, email)  
-	VALUES  ('Brandon Stevenson', 'test1@class.com'), 
-			('Ben Clark', 'test2@email.com'), 
-            ('Matt Brooks', 'test3@email.com'),
-			('Peter Lau', 'test4@email.com');
+INSERT INTO owners(name, googleID, pic)  
+	VALUES  ('Brandon Stevenson', '1234', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS_jpBJb4RJi0o0kWHjEIY0yX-iQLxI7xEOWt-8bzLX81H5s3GEw'),
+			('Ben Clark', '5678', 'https://i.pinimg.com/originals/12/40/34/1240341eda1f8803f04cbaedd97dbed3.jpg'),
+            ('Matt Brooks', '9012', 'https://cdn.kinsights.com/cache/15/bf/15bfba9d8ac7c47a45e33c1fe6447c27.jpg'),
+			('Peter Lau', '3456', 'https://www.goodnewsnetwork.org/wp-content/uploads/2015/08/cute-dog-couch-AllPaws-facebook.jpg');
 
 
 
