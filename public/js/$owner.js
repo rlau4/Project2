@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var $addOwner = $("#addOwner");
   var $inputOwnerName = $("#inputOwnerName");
-  var $inputOwnerEmail = $("#inputOwnerEmail");
+  var $inputOwnerGoogleId = $("#inputOwnerEmail");
 
   var API = {
     saveOwner: function(inputOwner) {
@@ -34,11 +34,11 @@ $(document).ready(function() {
 
     var inputOwner = {
       name: $inputOwnerName.val().trim(),
-      email: $inputOwnerEmail.val().trim()
+      email: $inputOwnerGoogleId.val().trim()
     };
 
     //front end validation for user submitting all necessary owner info
-    if (!(inputOwner.name && inputOwner.email)) {
+    if (!(inputOwner.name && inputOwner.googleID)) {
       alert("You must enter an example text and description!");
       return;
     }
@@ -48,7 +48,7 @@ $(document).ready(function() {
     });
 
     $inputOwnerName.val("");
-    $inputOwnerEmail.val("");
+    $inputOwnerGoogleId.val("");
   };
 
   $addOwner.on("click", handleAddOwner);
