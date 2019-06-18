@@ -27,12 +27,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/dashboard", function(req, res) {
+    res.render("dashboard");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
-  });
-
-  app.get("/dogs", function(req, res) {
-    res.render("dogs");
   });
 };
