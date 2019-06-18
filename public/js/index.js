@@ -7,7 +7,7 @@ var $exampleList = $("#example-list");
 //Google Map Api
 var geocoder;
 var map;
-var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var labelIndex = 0;
 var parks = [
   ["Freedom Barkway", "523 Highland Ave NE, Atlanta, GA 30312", 33.761089, -84.370102],
@@ -21,9 +21,6 @@ var parks = [
   ["Chattapoochee Dog Park", "4291 Rogers Bridge Rd, Duluth, GA", 34.028940, -84.140540],
   ["Lake Court Dog Park", "3500 Lake Dr SE, Smyrna, GA", 33.863730, -84.528540]
 ];
-<<<<<<< HEAD
-var image = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAB8CAMAAACcwCSMAAAAY1BMVEX///8AAACbm5uMjIxNTU15eXnKysrCwsIbGxtJSUksLCwEBAT19fXPz89TU1Pd3d3p6emkpKSysrJmZmZxcXEVFRUODg7W1tZaWlo8PDy4uLjv7+/j4+OsrKyEhIQmJiYzMzP+j2LqAAAEw0lEQVRoge1aiXKjOhDMcGPA3IdkDP7/r1wdgIWMBUTO22w9dVUqY0rqRmJm1CH++jIwMDAw+H8gKe5+/DE2/373jo7tXWC4Hp6hQlJytrI9MtoPyNCooRNsfe2c8jSM7b4/uqB3iZPWt0ng6mpbhGTw29anu2ntjW4bCHwe9t2B8WpgADRtd3IB8HeGVwDLo76R8XriEUA/xz1AqB6drbba01w6WXjx/JQL69oEGZAIHxGUOuIDXISC7S8wKIe7gDLhYwXo9n3tuARH/NztLKUCR2wu5Nazt2P3xa/QiZ/LHXFp5aV65XF2u90UnbBcp9jeyu/rpHhAtSHZ+oXdPRpYUD86G/vpy0gbAmEpabDTtW4g3l0ht6U484bro4ZNBKi8Z6t9WFcL6Vo7LZZ0IjzHWb2u88TuFiVU2jnG2Cc/OB/Kx3LdFjvJKBRPQk4LtfZXRsZb/PbxKPSkmzcdN2M55FsLiD3LDfkQexFsySkx7R15oM3rg5HgkXMlJE/QKoVu3NuMt0F22yvm3tKiY8/kmk/bT0+KzvKxdQVhS98T4GDZW5uni893uyqOlF2M+RblrEwyK1rY7nvTvTAYlzSOxmDMbxjRsCuWVIo3i0u4esvpPo12hi/BGAlsSLl2/JrDLJWG51P2KscZXvY+HRynejbm2KfyzSub4qiISb3YOYHdQEl/W5QDiTMGTlKsJxb8qti6mYNBFmUhcxir9RAOua2Fc9a+ngqc3E4n9jiiEpRdJJGkZJVdF0j3ZM+j2rnAvUaxdGvuSGkNOb8UroozfkBD7gWTjenTBX0JNanJrAEksrlzl0iW7nJR9LhNcfFgiqeWRyxHEy1oJhNASlnMRReiT4uztmPLicQ4/R8Wn3f2LoFdRFD/pDhd8tvpg1RJHxcn9XB9c4DHodRAz4v3MUVbk0XQQN52srPs9oRcZ/lOr71me8Q5PHq2sUgtHjlXijCCR0cDck5ICcd2xK+DFWqfT5cSDjrORo4qFnSNUnwDW9nuyoNYqb1k+waUK+/KNYK1eMR6To8A5QIQd36OnO0gkZXqlQeyX3TWCUcyusKFI6UWTUOMK2ldS8I9cSjbn5CyPXZej5Cv5bhZ2e7Pi39lbk2PanmmTSxX464nf16cujlvo9Jjz5Of2E+IH8Y/L468b6I8Lf5aaho4KV7nxQr4sS+hAJbYVH+tbbZX5H8T3RabRm8/hdO9vfZbCuIQ7ZQGKdIRbxhHSyxvwYJ0PJJw/TszcU78w07GiBtxI74t3vDAW14L7VjncLHOLLjWWh2Oc6DZOl+1rPNZ8XPttSmrFdxAS9yV2Got63xO/B+3UUbciP+g+N8stQ3rrNNktK3zf9de5xeL9P/I08tFHfEn2/yqcsc6J0nCrDMNEj3rHKWUo71T68wiY52NuBH/DeJLqU3/hdTq7ZN1bgHSI+IRCimI2b2wINSzzs7MxmmJI/+1vb2p3BWGUUt8kNiMdTbiRvw3iBvr/HesM4cQaFnnFza1daYWNylqGLjZ1bPOjCMh1vmeGOtsxI34rxH/qHWexA9b52tH4USAWNDpvXvlHCFpkzw6/dZ559vRSvEzvT3jXy1ZY+974W+RbLEpvnwab+C72p9mMzAwMDA4ij9VI2/VwvluTwAAAABJRU5ErkJggg=="
-=======
 var image = {
   url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAMAAAAqeZcjAAAAaVBMVEX///8jHyAAAAC2tra8u7zw8PAaFRZjYmIcGBmKiYkQCAoNAwdOS0wgGxyOjY4VDxAxMDB5eHnHx8dxcHD4+PhDQEGmpqbe3t7q6urS0tIIAADk5OSgoKCbmppWVVWwr68sKCmAgIA7OTnWb6TjAAAEi0lEQVRoge2b2ZaiMBCGk9JmFcMOIgj4/g85YRHDEghqYC6om+lz2uHrJH/9KcoEoVdEoRdgiRF4YYSG4QYACUgN+vjA7UFjFQywy/R0lhantLQpRI3f1JttwsP1R1Pw4/DdB5j2raNig+SymU3kxMAtN7aN4jb/6d8FHaLdzLNqks2olEtMtfrXBdhohpvIASo9B8ZjSypCDyOgLtHANww6vREKoZCeOf3wCwiRlzjbUhFyEg8FkG2NzSBAGE5bY3PAe2BPB/bAHthfY8t0HyyYqdTdgYMlGJRrPPk/OBGu2js5WANjC7B+F3+QTgvPb7FpYtIi3kqsclzF87CmApez6MpwlHwvtcSiZJM4gmCd/qEaBCcxMDeB7jquwJYBnhC4wlbgZygCnsnb+FqDMQFVoJptsJUkCoEkmLULP7WgAisCcnlhKzC5LoGXXCpXWvDlLIqlkYD+9xUWobMNWr1qxayF9rAYU0nMZZ+IJ7sXUOrJ00Jh7IIkxLYCVwXSgLlyGWErMFcSojvQzQOj0Wk2vWoTWAo2OWDxjS9yTLMBT5r1JJarxTX77b3ElaynzZqD5VjXum0+1osaTD1zCOZia3A4WJm11UWcFbV1jTxzBltNkJ32wOuLGj+tR0x12gPPYiuwwr65f1RL5UXtIDRB3pm5gMUY2Cz+sIRrrYvq9JUgS1il1zD4uHJsravzzCVsv2HwRcF6e1kXPi1j+4P9rk6OOusKaS01P9i+afCx8ztXG/cSkhpsn5uxc0IL+o7Bw8YP+ylUKsd6VQooajfp04Md9L04WF8jFq2LFrb2Fnwt2g5T5BnGJNWyByPgYPN6pTQ2MWfiL1XbnyJHMa0WxQQMX2442CxpBQiqSHhqlx53XWvANhPFUCgc7K3TpSIWEHQLEl+VxCLl7PzwJOWANZsQY60ySvBTEz7DIlebT8QJ3QB+6zX8EEtfhGDJ3cdg0Rb8nEv9lbXtrhzxty8jNCJ17UzT18QiXTa4JU8+J2u5lVNyqktxrL8eKwJewv6tnuUWPN+iloTF5MAe2AN7YA/sgZWB1aaCrTXhKgFbPC4TYTNcT8Y2r0y2mK/dC5B2mYV+jJ187Bs7/fuvsaMXR5lY7f2jRSaqYUnYC1Osm/pWWONcMFKFcdtRDhZuJ2boijr6rCSsiwJmeccnU6RhI2a4VrEZFnlMS2R0SEQe1mfTeKgqeVgUMlwyUJVELAqY5B2oSibWZW2r39KTiZ1RlVTs3WK8SmNVJRWLMmaaDbZ2kYv1Ga+y2LaeXGxPVez5yF9iyRiLVDKN7dpnytIBxsVOzaWbUaWTT9wN12LPDL43qKndeBUWpa9nEWYEnaqAff7bOWGpDb38FcWzWTElYXPl0rSrzOfwK7TxH/Mh1n8AUQjYvQH4KiRG0jvhXEUO9LPJQmkuhqXKdVRv9F1olJXZeCrjzFOvAuc0/qvzUgf259idjs7udFB4p2PROx0C3+nI+14H/He6zoBim+ANL2+Q9vIGullbXlWx3ldkdrmY015DKpzsJC/yzCkG15DQTpeuqtj0itk/7ZRRq/fS9sQAAAAASUVORK5CYII=", 
   scaledSize: new google.maps.Size(25, 25), // scaled size
@@ -31,7 +28,6 @@ var image = {
   anchor: new google.maps.Point(0, 0) // anchor
 };
 
->>>>>>> cddab0887c198128faa787ce7908c95eb91db993
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -275,12 +271,7 @@ function initMap() {
     ]
   });
   setMarkers(map);
-<<<<<<< HEAD
-}
-
-=======
 };
->>>>>>> cddab0887c198128faa787ce7908c95eb91db993
 var shape = {
   coords: [1, 1, 1, 20, 18, 20, 18, 1],
   type: 'poly'
@@ -292,12 +283,7 @@ function setMarkers(map) {
     var marker = new google.maps.Marker({
       position: { lat: park[2], lng: park[3] },
       map: map,
-<<<<<<< HEAD
-      icon: Image,
-      label: labels[labelIndex++ % labels.length],
-=======
       icon: image,
->>>>>>> cddab0887c198128faa787ce7908c95eb91db993
       shape: shape,
       title: park[0] + " || " + park[1],
       zIndex: park[3]
@@ -305,12 +291,9 @@ function setMarkers(map) {
   }
 }
 initMap();
-<<<<<<< HEAD
-=======
 //.env files to protect Google API key
 // var keys = require("../config/keys");
 // var googleKey = new Spotify(keys.google);
->>>>>>> cddab0887c198128faa787ce7908c95eb91db993
 
 // The API object contains methods for each kind of request we'll make
 var API = {

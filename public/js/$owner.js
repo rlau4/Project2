@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     //front end validation for user submitting all necessary owner info
     if (!(inputOwner.name && inputOwner.googleID)) {
-      alert("You must enter an example text and description!");
+      alert("You must enter both name and !");
       return;
     }
 
