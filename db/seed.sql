@@ -20,5 +20,5 @@ INSERT INTO dogs(dogName, breed, size, pic, personality, age)
     ('Sebastian', 'Yorkie', 1, 'blank.png', 1, 3)
 	
 	# Size- 1:small 2:medium 3:large
-    # Personality- 1:calm 2:timed: 3:energetic
+    # Personality- 1:calm 2:timid: 3:energetic
     # Age- 1:0-5 2:6-10 3:11+
