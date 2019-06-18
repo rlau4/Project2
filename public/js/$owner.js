@@ -1,8 +1,8 @@
 $(document).ready(function() {
   var $addOwner = $("#addOwner");
   var $inputOwnerName = $("#inputOwnerName");
-  var $inputOwnerGoogleId = $("#inputOwnerEmail");
-
+  var $inputOwnerGoogleId = $("#inputOwnerGoogleId");
+  var $inputOwnerPic = $("#inputOwnerPic");
   var API = {
     saveOwner: function(inputOwner) {
       return $.ajax({
@@ -34,7 +34,8 @@ $(document).ready(function() {
 
     var inputOwner = {
       name: $inputOwnerName.val().trim(),
-      email: $inputOwnerGoogleId.val().trim()
+      email: $inputOwnerGoogleId.val().trim(),
+      pic: $inputOwnerPic.val().trim()
     };
 
     //front end validation for user submitting all necessary owner info
