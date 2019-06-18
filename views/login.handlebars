@@ -12,6 +12,7 @@
   <h3 class="margin">Log in securely with Google!</h3>
   <p>Email and name will be used in creating a secure profile. </p>
 </div>
+
 <footer class="container-fluid bg-4 text-center">
 
 </footer>
@@ -30,6 +31,9 @@
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
+    var loggedIn;
+    loggedIn = true;
+    window.location.assign("/dashboard");
   }
 
   function signOut() {
@@ -37,5 +41,6 @@
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
+    loggedIn = false;
   }
 </script>
