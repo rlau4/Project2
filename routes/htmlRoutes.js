@@ -31,4 +31,8 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  app.get("/dogs", function(req, res) {
+    res.render("dogs");
+  });
 };
