@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var $addDog = $("#add-dog");
+  var $addDog = $("#addDog");
   var $inputDogName = $("#input-dog-name");
   var $inputDogBreed = $("#input-dog-breed");
-  var $inputDogSize = $("#input-dog-dize");
+  var $inputDogSize = $("#input-dog-size");
   var $inputDogPic = $("#input-dog-pic");
   var $inputDogPersonality = $("#input-dog-personality");
   var $inputDogAge = $("#input-dog-age");

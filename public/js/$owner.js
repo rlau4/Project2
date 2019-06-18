@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  var $addOwner = $("#addOwner");
-  var $inputOwnerName = $("#inputOwnerName");
-  var $inputOwnerGoogleId = $("#inputOwnerGoogleId");
+  var $addOwner = $("#add-owner");
+  var $inputOwnerName = $("#input-owner-name");
+  var $inputOwnerGoogleId = $("#input-owner-email");
   var $inputOwnerPic = $("#inputOwnerPic");
   var API = {
     saveOwner: function(inputOwner) {
