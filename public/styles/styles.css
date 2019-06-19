@@ -58,3 +58,7 @@ p {font-size: 16px;}
 #side-bar {
   height: 100%;
 }
+
+.mb-text {
+  color: #2f2f2f;
+}
