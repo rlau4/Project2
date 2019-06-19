@@ -32,13 +32,13 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Dog.associate = function(models) {
-    Dog.belongsTo(models.Owner, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Dog.associate = function(models) {
+  //   Dog.belongsTo(models.Owner, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Dog;
 };
