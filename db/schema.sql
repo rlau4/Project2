@@ -3,7 +3,7 @@ CREATE DATABASE dog_dateDB;
 
 USE dog_datedb;
 
---Create Owners table
+#Create Owners table
 CREATE TABLE owners (
 id INT NOT NULL AUTO_INCREMENT,
 name VARCHAR(50) NOT NULL,
@@ -12,9 +12,9 @@ pic VARCHAR(500) NOT NULL,
 createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (id)
-)
+);
 
---Create Dogs table
+#Create Dogs table
 CREATE TABLE dogs (
 id INT NOT NULL AUTO_INCREMENT,
 dogName VARCHAR(26) NOT NULL,
