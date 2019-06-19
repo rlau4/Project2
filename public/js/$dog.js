@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var $addDog = $("#addDog");
+  var $addDog = $("#add-Dog");
   var $inputDogName = $("#input-dog-name");
   var $inputDogBreed = $("#input-dog-breed");
   var $inputDogSize = $("#input-dog-size");
@@ -37,7 +37,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var inputDog = {
-      name: $inputDogName.val().trim(),
+      dogName: $inputDogName.val().trim(),
       breed: $inputDogBreed.val().trim(),
       size: $inputDogSize.val().trim(),
       pic: $inputDogPic.val().trim(),
@@ -45,10 +45,12 @@ $(document).ready(function() {
       age: $inputDogAge.val().trim()
     };
 
+    console.log(inputDog);
+
     //front end validation for user submitting all necessary dog info
     if (
       !(
-        inputDog.name &&
+        inputDog.dogName &&
         inputDog.breed &&
         inputDog.size &&
         inputDog.pic &&
@@ -61,11 +63,15 @@ $(document).ready(function() {
     }
 
     API.saveDog(inputDog).then(function() {
-      refreshExamples(); ///////////////////////will need to fix this
+      console.log("worked");
     });
 
-    $inputDogText.val("");
-    $inputDogDescription.val("");
+    $inputDogName.val("");
+    $inputDogBreed.val("");
+    $inputDogSize.val("");
+    $inputDogPic.val("");
+    $inputDogPersonality.val("");
+    $inputDogAge.val("");
   };
 
   $addDog.on("click", handleAddDog);
