@@ -46,7 +46,7 @@ module.exports = function(app) {
 
   //Dog post
   app.post("/api/dogs", function(req, res) {
-    db.Example.create(req.body).then(function(dbDog) {
+    db.Dog.create(req.body).then(function(dbDog) {
       res.json(dbDog);
     });
   });
