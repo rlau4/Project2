@@ -1,3 +1,5 @@
+var path = require("path");
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -16,11 +18,8 @@ module.exports = function(app) {
 
   // Load dashboard
   app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
-  });
-
-  app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
+    // res.render("dashboard");
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
   // Render 404 page for any unmatched routes
