@@ -18,11 +18,8 @@ module.exports = function(app) {
 
   // Load dashboard
   app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
-  });
-
-  app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
+    // res.render("dashboard");
+    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
   app.get("/alldogs", function(req, res){
