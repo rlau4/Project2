@@ -36,4 +36,4 @@ ownerName VARCHAR(50) NOT NULL,
 body VARCHAR(50) NOT NULL,
 OwnerId INT,
 PRIMARY KEY (id)
-)
+);

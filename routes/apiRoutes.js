@@ -17,7 +17,7 @@ module.exports = function (app) {
     });
   });
 
-  //Pull the info of 1 specific dog
+  //Pull the info of 1 specific Owner
   app.get("/api/owners/:id", function (req, res) {
     db.Owner.findOne({
       where: {
@@ -77,35 +77,16 @@ module.exports = function (app) {
   });
 
   //Find dogs based on size
-  app.get("/api/sz1", function (req, res) {
+  app.get("/api/sz/:vari", function (req, res) {
     db.Dog.findAll({
       where: {
-        size: 1
-      }
-    }).then(function (dbSm) {
-      res.json(dbSm);
-    });
-  });
-
-  app.get("/api/sz2", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 2
+        size: req.params.vari
       }
     }).then(function (dbMd) {
       res.json(dbMd);
     });
   });
 
-  app.get("/api/sz3", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 3
-      }
-    }).then(function (dbLg) {
-      res.json(dbLg);
-    });
-  });
 
   //Find dogs based on personality
   app.get("/api/pers1", function (req, res) {
