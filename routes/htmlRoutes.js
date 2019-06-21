@@ -21,12 +21,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
-  // Load message
   app.get("/message", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/message.html"));
-  });
-
-  app.get("/blog", function(req, res) {
     // res.render("dashboard");
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
