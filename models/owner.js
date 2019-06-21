@@ -21,8 +21,6 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Owner.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     Owner.hasMany(models.Dog, {
       onDelete: "cascade"
     });
