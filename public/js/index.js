@@ -6,7 +6,6 @@ var $exampleList = $("#example-list");
 //Google Map Api
 var map;
 var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var labelIndex = 0;
 var parks = [
   [
     "Freedom Barkway",
@@ -323,9 +322,6 @@ function setMarkers(map) {
   }
 }
 initMap();
-//.env files to protect Google API key
-// var keys = require("../config/keys");
-// var googleKey = new Spotify(keys.google);
 
 // The API object contains methods for each kind of request we'll make
 var API = {

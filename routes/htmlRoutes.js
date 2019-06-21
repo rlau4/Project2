@@ -26,6 +26,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/message.html"));
   });
 
+  app.get("/blog", function(req, res) {
+    // res.render("dashboard");
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  });
+  
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
