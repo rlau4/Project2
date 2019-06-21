@@ -61,4 +61,18 @@ module.exports = function(app) {
       res.json(dbDog);
     });
   });
+
+  //Talk GET Route
+  app.get("/api/talks", function(req, res) {
+    var query = {};
+    if (req.query.OwnerId) {
+      query.OwnerId = req.query.OwnerId;
+    }
+    db.Talk.findAll({
+      where: query,
+      include: [db.Owner]
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
 };
