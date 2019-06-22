@@ -1,6 +1,6 @@
 # Starter Owner Data 
 
-INSERT INTO owners(name, email, pic)  
+INSERT INTO Owners(name, email, pic)  
 	VALUES  ('Brandon Stevenson', '1234@test.com', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS_jpBJb4RJi0o0kWHjEIY0yX-iQLxI7xEOWt-8bzLX81H5s3GEw'),
 			('Ben Clark', '5678@test.com', 'https://i.pinimg.com/originals/12/40/34/1240341eda1f8803f04cbaedd97dbed3.jpg'),
             ('Matt Brooks', '9012@test.com', 'https://cdn.kinsights.com/cache/15/bf/15bfba9d8ac7c47a45e33c1fe6447c27.jpg'),
@@ -10,21 +10,22 @@ INSERT INTO owners(name, email, pic)
 
 #Starter Dog Date 
 
-INSERT INTO dogs(dogName, breed, size, pic, personality, age)
-	VALUES ('Sadie', 'Labrador Retreiver', 3, 'https://i.pinimg.com/originals/29/0c/19/290c192b887d0419bf8d686290bcb01b.jpg', 1, 3),
-           ('Roscoe', 'Pitbull', 3, 'https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz14.jpg', 1, 2),
-           ('Merc', 'Chi-weenie', 1, 'https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz14.jpg', 1, 2),
-           ('Marshall', 'German Shepherd', 1, 'http://cdn.akc.org/content/hero/gsd_header_.jpg?cachebuster:56', 1, 2),
-           ('Ella', 'Moxie', 1, 'https://i.pinimg.com/originals/11/e7/c9/11e7c969d7d8583ce09a3248e4d10566.jpg', 1, 1),
-           ('Lola', 'Poodle', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGN0gMHB_7zVu6djPAPZ-c4wF1Htgv4h8_cY6TorPyf3xKRJ5V', 3, 3),
-           ('Sebastian', 'Yorkie', 1, 'https://1djbcc27ketw16uuv6g8izdk-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/yorkshire-terrier-768x432.jpg', 4, 3);
+INSERT INTO Dogs(dogName, breed, size, pic, personality, age, OwnerId)
+	VALUES ('Sadie', 'Labrador Retreiver', 3, 'https://i.pinimg.com/originals/29/0c/19/290c192b887d0419bf8d686290bcb01b.jpg', 1, 3, 1),
+           ('Roscoe', 'Pitbull', 3, 'https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz14.jpg', 1, 2, 2),
+           ('Merc', 'Chi-weenie', 1, 'https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz14.jpg', 1, 2, 2),
+           ('Marshall', 'German Shepherd', 1, 'http://cdn.akc.org/content/hero/gsd_header_.jpg?cachebuster:56', 1, 2, 2),
+           ('Ella', 'Moxie', 1, 'https://i.pinimg.com/originals/11/e7/c9/11e7c969d7d8583ce09a3248e4d10566.jpg', 1, 1, 3),
+           ('Lola', 'Poodle', 1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGN0gMHB_7zVu6djPAPZ-c4wF1Htgv4h8_cY6TorPyf3xKRJ5V', 3, 3, 4),
+           ('Sebastian', 'Yorkie', 1, 'https://1djbcc27ketw16uuv6g8izdk-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/yorkshire-terrier-768x432.jpg', 4, 3, 1);
 	
 	# Size- 1:small 2:medium 3:large
     # Personality- 1:calm 2:timid: 3:energetic 4:weird
     # Age- 1:0-5 2:6-10 3:11+
 
-INSERT INTO talks(ownerName, body) 
-    VALUES ('Brandon Stevenson', 'the first post as a test'),
-           ('Peter Lau', "Test 2"),
-           ('Ben Clark','this is a third message i guess'),
-           ('Matt Brooks', 'So, yeah, dogs');
+INSERT INTO Talks(ownerName, body, OwnerId) 
+    VALUES ('Matt Brooks', "My dog just chased it's tail for 5 minutes straight then starting pouting when he couldn't catch it.", 5),
+		   ('Brandon Stevenson', "Headed to Oakhurst Dog Park at 3 today if anyone is interested!", 3),
+           ('Peter Lau', "Anyone have a medium sized puppy that wants to meet up at the Pet Yard Indoor Park? Got a new puppy and looking to get him some friends", 2),
+           ('Ben Clark',"Oakhurst at 3? I'll be there", 1),
+		   ('Matt Brooks', "Oh, he's back to chasing his tail again, wonder how long it'll last this time", 5);
