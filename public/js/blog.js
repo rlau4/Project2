@@ -141,7 +141,7 @@ $(document).ready(function() {
     for (var i = 0; i < talks.length; i++) {
       talksToAdd.push(createNewRow(talks[i]));
     }
-    blogContainer.append(talksToAdd);
+    blogContainer.prepend(talksToAdd);
   }
 
   // This function constructs a Talk's HTML
@@ -164,8 +164,7 @@ $(document).ready(function() {
     var newTalkDate = $("<small>");
     var newUpdateDate = $("<small class='new'>");
     var newTalkOwner = $("<h5>");
-    console.log(talks);
-    newTalkOwner.text("Written by: " + talks.ownerName);
+    newTalkOwner.text("Written by: " + Talk.ownerName);
     newTalkOwner.css({
       float: "right",
       color: "blue",
@@ -232,14 +231,14 @@ $(document).ready(function() {
   }
 
   var API = {
-    saveTalk: function(inputDog) {
+    saveTalk: function(inputMsg) {
       return $.ajax({
         headers: {
           "Content-Type": "application/json"
         },
         type: "POST",
         url: "api/talks",
-        data: JSON.stringify(inputDog)
+        data: JSON.stringify(inputMsg)
       });
     }
   };
