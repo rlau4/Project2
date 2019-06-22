@@ -18,15 +18,10 @@ module.exports = function(app) {
 
   // Load dashboard
   app.get("/dashboard", function(req, res) {
-    // res.render("dashboard");
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
 
-  app.get("/alldogs", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/dashboard.html"));
-  });
-
-  app.get("/blog", function(req, res) {
+  app.get("/message", function(req, res) {
     // res.render("dashboard");
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });

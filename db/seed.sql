@@ -23,8 +23,8 @@ INSERT INTO dogs(dogName, breed, size, pic, personality, age)
     # Personality- 1:calm 2:timid: 3:energetic 4:weird
     # Age- 1:0-5 2:6-10 3:11+
 
-INSERT INTO talks(ownerName, body, OwnerId) 
-    VALUES ('Brandon Stevenson', 'the first post as a test', 1),
+INSERT INTO talks(ownerName, body) 
+    VALUES ('Brandon Stevenson', 'the first post as a test'),
            ('Peter Lau', "Test 2"),
            ('Ben Clark','this is a third message i guess'),
            ('Matt Brooks', 'So, yeah, dogs');

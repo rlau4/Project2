@@ -62,7 +62,7 @@ p {font-size: 16px;}
   color: #2f2f2f;
 }
 
-#all-dogs {
+#all-dogs, #all-msg {
   position: absolute;
   left: 220px;
   top: 20px;
@@ -88,7 +88,7 @@ p {font-size: 16px;}
   color: #1abc9c;
 }
 
-.dropbtn, .add-dog {
+.dropbtn, .add-dog, .add-msg {
   background-color: #1abc9c;
   color: white;
   padding: 16px;
@@ -127,17 +127,20 @@ p {font-size: 16px;}
 .well {
   float: left;
   margin-right: 20px;
-  width: 400px;
+  width: 350px;
   height: 400px;
   align-content: center;
   text-align: center;
 }
 
 #dog-pic {
-  height: 200px;
+  height: 150px;
   width: auto;
 }
 
+#btm-ind {
+  margin-bottom: 20px;
+}
 
 
 
