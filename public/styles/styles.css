@@ -142,5 +142,23 @@ p {font-size: 16px;}
   margin-bottom: 20px;
 }
 
-
-
+.add-dog-mdl-btn {
+  color: #1abc9c;
+  float: right;
+ }
+ 
+ .edit-btn {
+  color: #1abc9c;
+  float: right;
+  border: none;
+ }
+ 
+ .delete-btn {
+  color: #FD5656;
+  float: right;
+  border: none;
+ }
+ 
+ .add-dog-mdl-btn:hover, .editBtn:hover, .deleteBtn:hover {
+  color: #474e5d;
+ }
