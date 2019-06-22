@@ -379,10 +379,10 @@ var handleFormSubmit = function(event) {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
   };
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
   API.saveExample(example).then(function() {
     refreshExamples();
   });
