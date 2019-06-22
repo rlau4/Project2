@@ -118,7 +118,7 @@ module.exports = function (app) {
   app.post("/api/talks", function (req, res) {
     console.log(req.body);
     console.log("test");
-    db.Owner.create(req.body).then(function (dbOwner) {
+    db.Talk.create(req.body).then(function (dbOwner) {
       res.json(dbOwner);
     });
   });
