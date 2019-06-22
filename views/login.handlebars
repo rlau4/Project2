@@ -89,5 +89,8 @@
     var loggedIn;
     loggedIn = true;
     window.location.assign("/dashboard");
+
+    sessionStorage.setItem("sessionName", userName);
+    sessionStorage.setItem("sessionEmail", userEmail);
   }
 </script>

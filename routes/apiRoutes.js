@@ -17,7 +17,7 @@ module.exports = function (app) {
     });
   });
 
-  //Pull the info of 1 specific Owner
+  //Pull the info of 1 specific dog
   app.get("/api/owners/:id", function (req, res) {
     db.Owner.findOne({
       where: {
@@ -40,33 +40,78 @@ module.exports = function (app) {
   });
 
   //Pull dogs based on age
-  app.get("/api/age/:category", function (req, res) {
+  app.get("/api/age1", function (req, res) {
     db.Dog.findAll({
       where: {
-        age: req.params.category
+        age: {
+          [Op.lt]: 5,
+        }
       }
     }).then(function (dbPup) {
       res.json(dbPup);
     });
   });
 
-  //Find dogs based on size
-  app.get("/api/sz/:category", function (req, res) {
+  app.get("/api/age2", function (req, res) {
     db.Dog.findAll({
       where: {
-        size: req.params.category
+        age: {
+          [Op.between]: [5, 11],
+        }
+      }
+    }).then(function (dbMid) {
+      res.json(dbMid);
+    });
+  });
+
+  app.get("/api/age3", function (req, res) {
+    db.Dog.findAll({
+      where: {
+        age: {
+          [Op.gt]: [10],
+        }
+      }
+    }).then(function (dbSnr) {
+      res.json(dbSnr);
+    });
+  });
+
+  //Find dogs based on size
+  app.get("/api/sz1", function (req, res) {
+    db.Dog.findAll({
+      where: {
+        size: 1
+      }
+    }).then(function (dbSm) {
+      res.json(dbSm);
+    });
+  });
+
+  app.get("/api/sz2", function (req, res) {
+    db.Dog.findAll({
+      where: {
+        size: 2
       }
     }).then(function (dbMd) {
       res.json(dbMd);
     });
   });
 
-
-  //Find dogs based on personality
-  app.get("/api/pers/:category", function (req, res) {
+  app.get("/api/sz3", function (req, res) {
     db.Dog.findAll({
       where: {
-        personality: req.params.category
+        size: 3
+      }
+    }).then(function (dbLg) {
+      res.json(dbLg);
+    });
+  });
+
+  //Find dogs based on personality
+  app.get("/api/pers1", function (req, res) {
+    db.Dog.findAll({
+      where: {
+        personality: 1
       }
     }).then(function (dbPers1) {
       res.json(dbPers1);

@@ -82,16 +82,9 @@ $(document).ready(function() {
     });
   }
 
-  // Update a given Talk , bring user to the blog page when done
-  function updateTalk(Talk) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/Talks",
-      data: Talk
-    }).then(function() {
-      window.location.href = "/blog";
-    });
-  }
+  var $addMsg = $("#add-msg");
+  var $msgBody = $("#talk-body");
+
   // blogContainer holds all of our talks
   var blogContainer = $(".blog-container");
   var talkCategorySelect = $("#category");
@@ -170,9 +163,9 @@ $(document).ready(function() {
     var newTalkTitle = $("<h2>");
     var newTalkDate = $("<small>");
     var newUpdateDate = $("<small class='new'>");
-    var newTalkOwner = $("<h5>");
-    newTalkOwner.text("Written by: " + Talk.Owner.name);
-    newTalkOwner.css({
+    var newPostOwner = $("<h5>");
+    newPostOwner.text("Written by: " + post.ownerName);
+    newPostOwner.css({
       float: "right",
       color: "blue",
       "margin-top": "-10px"
@@ -236,6 +229,37 @@ $(document).ready(function() {
     );
     blogContainer.append(messageH2);
   }
+
+  var API = {
+    saveTalk: function(inputDog) {
+      return $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        type: "POST",
+        url: "api/talks",
+        data: JSON.stringify(inputDog)
+      });
+    }
+  };
+
+  var handleAddMsg = function(event) {
+    event.preventDefault();
+
+    var inputMsg = {
+      ownerName: sessionStorage.getItem("sessionName"),
+      body: $msgBody.val().trim(),
+      OwnerId: 1
+    };
+
+    API.saveTalk(inputMsg).then(function() {
+      console.log("worked");
+    });
+
+    $msgBody.val("");
+  };
+
+  $addMsg.on("click", handleAddMsg);
 });
 
 //ADDLATER needs to be filled in with "message"
