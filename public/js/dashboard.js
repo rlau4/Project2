@@ -14,10 +14,13 @@ $.get("/api/all", function (data) {
 $(document).ready(function() {
   $(".filter").on("click", function() {
     criteria = this.id;
+    console.log("criteria");
+    console.log(criteria);
+
     $("#all-dogs").empty()
     $.get("/api/" + criteria, function(data) {
-      console.log("DATA VVV");
-      console.log(data);
+      // console.log("DATA VVV");
+      // console.log(data);
       for (var i = 0; i < data.length; i++) {
         var wellSection = $("<div>");
         wellSection.addClass("well");
