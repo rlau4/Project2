@@ -17,7 +17,7 @@ $(document).ready(function() {
     console.log("criteria");
     console.log(criteria);
 
-    $("#all-dogs").empty()
+    $("#all-dogs").empty();
     $.get("/api/" + criteria, function(data) {
       console.log("DATA VVV");
       console.log(data);
