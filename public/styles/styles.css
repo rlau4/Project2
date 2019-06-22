@@ -151,12 +151,14 @@ p {font-size: 16px;}
   color: #1abc9c;
   float: right;
   border: none;
+  background-color: white;
  }
  
  .delete-btn {
   color: #FD5656;
   float: right;
   border: none;
+  background-color: white;
  }
  
  .add-dog-mdl-btn:hover, .editBtn:hover, .deleteBtn:hover {
