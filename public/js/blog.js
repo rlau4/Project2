@@ -138,7 +138,7 @@ $(document).ready(function() {
   function initializeRows() {
     blogContainer.empty();
     var talksToAdd = [];
-    for (var i = 0; i < talks.length; i++) {
+    for (var i = talks.length - 1; i >= 0; i--) {
       talksToAdd.push(createNewRow(talks[i]));
     }
     blogContainer.prepend(talksToAdd);
