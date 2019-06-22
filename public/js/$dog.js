@@ -48,19 +48,19 @@ $(document).ready(function() {
     console.log(inputDog);
 
     //front end validation for user submitting all necessary dog info
-    if (
-      !(
-        inputDog.dogName &&
-        inputDog.breed &&
-        inputDog.size &&
-        inputDog.pic &&
-        inputDog.personality &&
-        inputDog.age
-      )
-    ) {
-      alert("You must enter an example text and description!");
-      return;
-    }
+    // if (
+    //   !(
+    //     inputDog.dogName &&
+    //     inputDog.breed &&
+    //     inputDog.size &&
+    //     inputDog.pic &&
+    //     inputDog.personality &&
+    //     inputDog.age
+    //   )
+    // ) {
+    //   alert("You must enter an example text and description!");
+    //   return;
+    // }
 
     API.saveDog(inputDog).then(function() {
       console.log("worked");
