@@ -73,14 +73,15 @@ module.exports = function (app) {
     });
   });
 
-
-  
   // Owners Post
   app.post("/api/owners", function (req, res) {
     db.Owner.create(req.body).then(function (dbOwner) {
       res.json(dbOwner);
     });
   });
+
+
+
 
   //Dog post
   app.post("/api/dogs", function (req, res) {
@@ -111,6 +112,25 @@ module.exports = function (app) {
       include: [db.Owner]
     }).then(function(result) {
       res.json(result);
+    });
+  });
+  
+  //Talk POST route
+  app.post("/api/talks", function (req, res) {
+    console.log("test");
+    db.Owner.create(req.body).then(function (dbOwner) {
+      res.json(dbOwner);
+    });
+  });
+  
+  //Talk DELETE route
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Talk.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTalk) {
+      res.json(dbTalk);
     });
   });
 };
