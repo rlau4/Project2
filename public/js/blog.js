@@ -1,6 +1,9 @@
 $(document).ready(function() {
   /* global moment */
 
+  var $addMsg = $("#add-msg");
+  var $msgBody = $("#talk-body");
+
   // blogContainer holds all of our talks
   var blogContainer = $(".blog-container");
   var postCategorySelect = $("#category");
@@ -145,4 +148,35 @@ $(document).ready(function() {
     );
     blogContainer.append(messageH2);
   }
+
+  var API = {
+    saveTalk: function(inputDog) {
+      return $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        type: "POST",
+        url: "api/talks",
+        data: JSON.stringify(inputDog)
+      });
+    }
+  };
+
+  var handleAddMsg = function(event) {
+    event.preventDefault();
+
+    var inputMsg = {
+      ownerName: sessionStorage.getItem("sessionName"),
+      body: $msgBody.val().trim(),
+      OwnerId: 1
+    };
+
+    API.saveTalk(inputMsg).then(function() {
+      console.log("worked");
+    });
+
+    $msgBody.val("");
+  };
+
+  $addMsg.on("click", handleAddMsg);
 });
