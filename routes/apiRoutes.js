@@ -40,120 +40,47 @@ module.exports = function (app) {
   });
 
   //Pull dogs based on age
-  app.get("/api/age1", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        age: {
-          [Op.lt]: 5,
+    app.get("/api/age/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          age: req.params.category
         }
-      }
-    }).then(function (dbPup) {
-      res.json(dbPup);
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
     });
-  });
-
-  app.get("/api/age2", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        age: {
-          [Op.between]: [5, 11],
-        }
-      }
-    }).then(function (dbMid) {
-      res.json(dbMid);
-    });
-  });
-
-  app.get("/api/age3", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        age: {
-          [Op.gt]: [10],
-        }
-      }
-    }).then(function (dbSnr) {
-      res.json(dbSnr);
-    });
-  });
-
-  //Find dogs based on size
-  app.get("/api/sz1", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 1
-      }
-    }).then(function (dbSm) {
-      res.json(dbSm);
-    });
-  });
-
-  app.get("/api/sz2", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 2
-      }
-    }).then(function (dbMd) {
-      res.json(dbMd);
-    });
-  });
-
-  app.get("/api/sz3", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 3
-      }
-    }).then(function (dbLg) {
-      res.json(dbLg);
-    });
-  });
-
-  //Find dogs based on personality
-  app.get("/api/pers1", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        personality: 1
-      }
-    }).then(function (dbPers1) {
-      res.json(dbPers1);
-    });
-  });
-
-  app.get("/api/pers2", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        personality: 2
-      }
-    }).then(function (dbPers2) {
-      res.json(dbPers2);
-    });
-  });
-
-  app.get("/api/pers3", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        personality: 3
-      }
-    }).then(function (dbPers3) {
-      res.json(dbPers3);
-    });
-  });
-
-  app.get("/api/pers4", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        personality: 4
-      }
-    }).then(function (dbPers4) {
-      res.json(dbPers4);
-    });
-  });
   
+    //Find dogs based on size
+    app.get("/api/sz/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          size: req.params.category
+        }
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
+    });
+  
+    //Find dogs based on personality
+    app.get("/api/pers/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          personality: req.params.category
+        }
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
+    });
+
   // Owners Post
   app.post("/api/owners", function (req, res) {
     db.Owner.create(req.body).then(function (dbOwner) {
       res.json(dbOwner);
     });
   });
+
+
+
 
   //Dog post
   app.post("/api/dogs", function (req, res) {
@@ -186,12 +113,24 @@ module.exports = function (app) {
       res.json(result);
     });
   });
-
+  
   //Talk POST route
-  app.post("/api/talks", function(req, res){
-    db.Talk.create(req.body).then(function(dbTalk) {
-      res.json(dbTalk)
-    })
+  app.post("/api/talks", function (req, res) {
+    console.log(req.body);
+    console.log("test");
+    db.Owner.create(req.body).then(function (dbOwner) {
+      res.json(dbOwner);
+    });
   });
-
+  
+  //Talk DELETE route
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Talk.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTalk) {
+      res.json(dbTalk);
+    });
+  });
 };

@@ -25,7 +25,7 @@ module.exports = function(app) {
     // res.render("dashboard");
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
-  
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
