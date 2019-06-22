@@ -1,6 +1,6 @@
 # Starter Owner Data 
 
-INSERT INTO owners(name, email, pic)  
+INSERT INTO Owners(name, email, pic)  
 	VALUES  ('Brandon Stevenson', '1234@test.com', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS_jpBJb4RJi0o0kWHjEIY0yX-iQLxI7xEOWt-8bzLX81H5s3GEw'),
 			('Ben Clark', '5678@test.com', 'https://i.pinimg.com/originals/12/40/34/1240341eda1f8803f04cbaedd97dbed3.jpg'),
             ('Matt Brooks', '9012@test.com', 'https://cdn.kinsights.com/cache/15/bf/15bfba9d8ac7c47a45e33c1fe6447c27.jpg'),
@@ -10,7 +10,7 @@ INSERT INTO owners(name, email, pic)
 
 #Starter Dog Date 
 
-INSERT INTO dogs(dogName, breed, size, pic, personality, age)
+INSERT INTO Dogs(dogName, breed, size, pic, personality, age)
 	VALUES ('Sadie', 'Labrador Retreiver', 3, 'https://i.pinimg.com/originals/29/0c/19/290c192b887d0419bf8d686290bcb01b.jpg', 1, 3),
            ('Roscoe', 'Pitbull', 3, 'https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz14.jpg', 1, 2),
            ('Merc', 'Chi-weenie', 1, 'https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz14.jpg', 1, 2),
@@ -23,7 +23,7 @@ INSERT INTO dogs(dogName, breed, size, pic, personality, age)
     # Personality- 1:calm 2:timid: 3:energetic 4:weird
     # Age- 1:0-5 2:6-10 3:11+
 
-INSERT INTO talks(ownerName, body) 
+INSERT INTO Talks(ownerName, body) 
     VALUES ('Brandon Stevenson', 'the first post as a test'),
            ('Peter Lau', "Test 2"),
            ('Ben Clark','this is a third message i guess'),

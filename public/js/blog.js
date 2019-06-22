@@ -131,7 +131,6 @@ $(document).ready(function() {
 
   // This function displays a message when there are no talks
   function displayEmpty(id) {
-    var query = window.location.search;
     var partial = "";
     if (id) {
       partial = " for Owner #" + id;
@@ -140,11 +139,7 @@ $(document).ready(function() {
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html(
-      "No talks yet" +
-        partial +
-        ", navigate <a href='/ADDLATER" +
-        query +
-        "'>here</a> in order to get started."
+      "No talks yet" + partial + ", why not start the conversation?"
     );
     blogContainer.append(messageH2);
   }
