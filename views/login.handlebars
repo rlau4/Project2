@@ -70,12 +70,6 @@
         pic: userPic
       };
 
-      //front end validation for user submitting all necessary owner info
-      if (!(inputOwner.name && inputOwner.email)) {
-        alert("You must enter an example text and description!");
-        return;
-      }
-
       API.saveOwner(inputOwner).then(function() {
       });
 
