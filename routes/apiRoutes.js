@@ -40,83 +40,37 @@ module.exports = function (app) {
   });
 
   //Pull dogs based on age
-  app.get("/api/age1", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        age: {
-          [Op.lt]: 5,
+    app.get("/api/age/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          age: req.params.category
         }
-      }
-    }).then(function (dbPup) {
-      res.json(dbPup);
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
     });
-  });
-
-  app.get("/api/age2", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        age: {
-          [Op.between]: [5, 11],
+  
+    //Find dogs based on size
+    app.get("/api/sz/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          size: req.params.category
         }
-      }
-    }).then(function (dbMid) {
-      res.json(dbMid);
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
     });
-  });
-
-  app.get("/api/age3", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        age: {
-          [Op.gt]: [10],
+  
+    //Find dogs based on personality
+    app.get("/api/pers/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          personality: req.params.category
         }
-      }
-    }).then(function (dbSnr) {
-      res.json(dbSnr);
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
     });
-  });
-
-  //Find dogs based on size
-  app.get("/api/sz1", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 1
-      }
-    }).then(function (dbSm) {
-      res.json(dbSm);
-    });
-  });
-
-  app.get("/api/sz2", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 2
-      }
-    }).then(function (dbMd) {
-      res.json(dbMd);
-    });
-  });
-
-  app.get("/api/sz3", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        size: 3
-      }
-    }).then(function (dbLg) {
-      res.json(dbLg);
-    });
-  });
-
-  //Find dogs based on personality
-  app.get("/api/pers1", function (req, res) {
-    db.Dog.findAll({
-      where: {
-        personality: 1
-      }
-    }).then(function (dbPers1) {
-      res.json(dbPers1);
-    });
-  });
 
   // Owners Post
   app.post("/api/owners", function (req, res) {
