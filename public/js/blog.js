@@ -164,7 +164,7 @@ $(document).ready(function() {
     var newTalkDate = $("<small>");
     var newUpdateDate = $("<small class='new'>");
     var newPostOwner = $("<h5>");
-    newPostOwner.text("Written by: " + post.ownerName);
+    newPostOwner.text("Written by: " + Talk.ownerName);
     newPostOwner.css({
       float: "right",
       color: "blue",
