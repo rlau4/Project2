@@ -1,17 +1,17 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "dog_dateDB",
-    "host": "localhost",
+    "username": "pfhmlkwxcwq7r0li",
+    "password": "zaq805is05lnlukg",
+    "database": "makes3nxazg7f084",
+    "host": "vhw3t8e71xdz9k14.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "password",
-    "database": "testdb",
-    "host": "localhost",
+    "username": "pfhmlkwxcwq7r0li",
+    "password": "zaq805is05lnlukg",
+    "database": "makes3nxazg7f084",
+    "host": "vhw3t8e71xdz9k14.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "logging": false
   },
