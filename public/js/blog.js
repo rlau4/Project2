@@ -220,15 +220,7 @@ $(document).ready(function() {
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html(
-<<<<<<< HEAD
       "No talks yet" + partial + ", why not start the conversation?"
-=======
-      "No talks yet" +
-        partial +
-        ", navigate <a href='/message" +
-        query +
-        "'>here</a> in order to get started."
->>>>>>> d9279fa85e6fb51018fb517d06bd4ea7869e478d
     );
     blogContainer.append(messageH2);
   }
