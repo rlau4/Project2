@@ -80,7 +80,6 @@ $(document).ready(function() {
     var newPostDate = $("<small>");
     var newUpdateDate = $("<small class='new'>");
     var newPostOwner = $("<h5>");
-    console.log(post);
     newPostOwner.text("Written by: " + post.ownerName);
     newPostOwner.css({
       float: "right",
