@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 $.get("/api/all", function(data) {
+=======
+$.get("/api/all", function (data) {
+>>>>>>> d9279fa85e6fb51018fb517d06bd4ea7869e478d
   console.log(data);
   for (var i = 0; i < data.length; i++) {
     var wellSection = $("<div>");
@@ -11,6 +15,7 @@ $.get("/api/all", function(data) {
     );
   }
 });
+<<<<<<< HEAD
 
 $(document).ready(function() {
   //Age search
@@ -18,6 +23,17 @@ $(document).ready(function() {
     console.log("click!");
     $("#all-dogs").empty();
     $.get("/api/age/1", function(data) {
+=======
+$(document).ready(function() {
+  $(".filter").on("click", function() {
+    criteria = this.id;
+    console.log("criteria");
+    console.log(criteria);
+
+    $("#all-dogs").empty();
+    $.get("/api/" + criteria, function(data) {
+      console.log("DATA VVV");
+>>>>>>> d9279fa85e6fb51018fb517d06bd4ea7869e478d
       console.log(data);
       for (var i = 0; i < data.length; i++) {
         var wellSection = $("<div>");
@@ -28,6 +44,7 @@ $(document).ready(function() {
         $("#character-well-" + i).append("<h3>Breed: " + data[i].breed + "</h4>");
         $("#character-well-" + i).append("<img src= '" + data[i].pic + "' id='dog-pic'>");
       }
+<<<<<<< HEAD
     });
   });
 
@@ -202,4 +219,8 @@ $(document).ready(function() {
   //     }
     });
   });
+=======
+    });
+  });
+>>>>>>> d9279fa85e6fb51018fb517d06bd4ea7869e478d
 });

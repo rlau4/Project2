@@ -23,8 +23,9 @@ INSERT INTO Dogs(dogName, breed, size, pic, personality, age)
     # Personality- 1:calm 2:timid: 3:energetic 4:weird
     # Age- 1:0-5 2:6-10 3:11+
 
-INSERT INTO Talks(ownerName, body) 
-    VALUES ('Brandon Stevenson', 'the first post as a test'),
-           ('Peter Lau', "Test 2"),
-           ('Ben Clark','this is a third message i guess'),
-           ('Matt Brooks', 'So, yeah, dogs');
+INSERT INTO Talks(ownerName, body, OwnerId) 
+    VALUES ('Matt Brooks', "My dog just chased it's tail for 5 minutes straight then starting pouting when he couldn't catch it.", 5),
+		   ('Brandon Stevenson', "Headed to Oakhurst Dog Park at 3 today if anyone is interested!", 3),
+           ('Peter Lau', "Anyone have a medium sized puppy that wants to meet up at the Pet Yard Indoor Park? Got a new puppy and looking to get him some friends", 2),
+           ('Ben Clark',"Oakhurst at 3? I'll be there", 1),
+		   ('Matt Brooks', "Oh, he's back to chasing his tail again, wonder how long it'll last this time", 5);

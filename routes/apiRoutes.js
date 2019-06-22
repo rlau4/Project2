@@ -40,6 +40,7 @@ module.exports = function (app) {
   });
 
   //Pull dogs based on age
+<<<<<<< HEAD
   app.get("/api/age/:category", function (req, res) {
     db.Dog.findAll({
       where: {
@@ -58,9 +59,41 @@ module.exports = function (app) {
       }
     }).then(function (dbPup) {
       res.json(dbPup);
+=======
+    app.get("/api/age/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          age: req.params.category
+        }
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
     });
-  });
+  
+    //Find dogs based on size
+    app.get("/api/sz/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          size: req.params.category
+        }
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
+    });
+  
+    //Find dogs based on personality
+    app.get("/api/pers/:category", function (req, res) {
+      db.Dog.findAll({
+        where: {
+          personality: req.params.category
+        }
+      }).then(function (dbPup) {
+        res.json(dbPup);
+      });
+>>>>>>> d9279fa85e6fb51018fb517d06bd4ea7869e478d
+    });
 
+<<<<<<< HEAD
   //Find dogs based on personality
   app.get("/api/pers/:category", function (req, res) {
     db.Dog.findAll({
@@ -72,12 +105,17 @@ module.exports = function (app) {
     });
   });
   
+=======
+>>>>>>> d9279fa85e6fb51018fb517d06bd4ea7869e478d
   // Owners Post
   app.post("/api/owners", function (req, res) {
     db.Owner.create(req.body).then(function (dbOwner) {
       res.json(dbOwner);
     });
   });
+
+
+
 
   //Dog post
   app.post("/api/dogs", function (req, res) {
@@ -110,12 +148,24 @@ module.exports = function (app) {
       res.json(result);
     });
   });
-
+  
   //Talk POST route
-  app.post("/api/talks", function(req, res){
-    db.Talk.create(req.body).then(function(dbTalk) {
-      res.json(dbTalk)
-    })
+  app.post("/api/talks", function (req, res) {
+    console.log(req.body);
+    console.log("test");
+    db.Owner.create(req.body).then(function (dbOwner) {
+      res.json(dbOwner);
+    });
   });
-
+  
+  //Talk DELETE route
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Talk.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbTalk) {
+      res.json(dbTalk);
+    });
+  });
 };
