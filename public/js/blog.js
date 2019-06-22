@@ -9,7 +9,7 @@ $(document).ready(function() {
   var TalkId;
   // Sets a flag for whether or not we're updating a Talk to be false initially
   var updating = false;
-
+  var OwnerId = 1;
   // If we have this section in our url, we pull out the Talk id from the url
   // In '?Talk_id=1', TalkId is 1
   if (url.indexOf("?Talk_id=") !== -1) {
@@ -36,7 +36,7 @@ $(document).ready(function() {
     // Constructing a newTalk  object to hand to the database
     var newTalk = {
       body: bodyInput.val().trim(),
-      OwnerId: sessionName
+      OwnerId: window.sessionStorage.sessionName
     };
 
     // If we're updating a Talk  run updateTalk  to update a Talk
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
   // Submits a new Talk  and brings user to blog page upon completion
   function submitTalk(Talk) {
-    $.post("/api/Talks", Talk, function() {
+    $.post("/api/talks", Talk, function() {
       window.location.href = "/blog";
     });
   }
