@@ -5,9 +5,7 @@ var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 //Google Map Api
 
-$("#map").attr(
-  "src",
-  "https://maps.googleapis.com/maps/api/js?key=" + google.map
+$("#map").attr("src", "https://maps.googleapis.com/maps/api/js?key=" + google.map
 );
 var map;
 var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
