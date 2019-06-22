@@ -2,7 +2,6 @@ $(document).ready(function() {
   /* global moment */
   // Getting jQuery references to the Talk body, title, form, and Owner select
   var bodyInput = $("#talk-body");
-  var cmsForm = $("#cms");
   // Adding an event listener for when the form is submitted
   $("#add-dog").on("click", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a Talk)
@@ -73,7 +72,7 @@ $(document).ready(function() {
     $.get(queryUrl, function(data) {
       if (data) {
         console.log(data.OwnerId || data.id);
-        // If this Talk  exists, prefill our cms forms with its data
+        // If this Talk exists, prefill our cms forms with its data
         bodyInput.val(data.body);
         ownerId = data.OwnerId || data.id;
         // If we have a Talk  with this id, set a flag for us to know to update the Talk
@@ -122,7 +121,7 @@ $(document).ready(function() {
       OwnerId = "/?OwnerId=" + OwnerId;
     }
     $.get("/api/talks" + OwnerId, function(data) {
-      console.log("Talks", data);
+      // console.log("Talks", data);
       talks = data;
       if (!talks || !talks.length) {
         displayEmpty(owner);
